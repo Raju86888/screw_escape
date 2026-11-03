@@ -180,16 +180,16 @@
 
 ## 7. Acceptance Criteria
 
-- [ ] **AC-01 (Strict PortraitUp Lock)**: The app launches and stays locked strictly in `portraitUp` orientation when rotated on an Android device or emulator. (Traces: `REQ-001-01`, `EC-01`)
-- [ ] **AC-02 (Native Visual Styling)**: The home screen displays warm wooden surfaces, metallic screw accents, and beveled buttons rendered strictly using native Flutter widgets and `CustomPainter` with zero external image assets. (Traces: `REQ-001-02`, `NFR-001-02`)
-- [ ] **AC-03 (Play Button Navigation)**: Tapping the "Play" button navigates to the Gameplay Placeholder screen. (Traces: `REQ-001-03`, `REQ-001-04`)
-- [ ] **AC-04 (Gameplay Placeholder & Back Navigation)**: The Gameplay Placeholder screen displays "Gameplay coming soon" and tapping its "Back" button (or Android system back) returns the user to the Home Screen. (Traces: `REQ-001-04`, `EC-05`)
-- [ ] **AC-05 (Sound Preference Persistence Across Restarts)**: Changing the sound toggle setting in the settings dialog persists the choice locally; restarting the app preserves and loads the updated preference. (Traces: `REQ-001-05`, `REQ-001-06`, `EC-02`)
-- [ ] **AC-06 (Settings Dialog & Toggle UI)**: Tapping the Settings button opens a modal dialog styled with the wooden/metallic theme, displaying a functioning Sound Toggle, version text, and a working dismiss/close button. (Traces: `REQ-001-05`)
-- [ ] **AC-07 (Level Select Placeholder)**: Tapping "Levels" displays an informative placeholder dialog that dismisses cleanly without errors. (Traces: `REQ-001-07`)
-- [ ] **AC-08 (Smooth Performance)**: The home screen, modal dialog, and placeholder screen transitions render smoothly without noticeable jank on baseline Android devices. (Traces: `NFR-001-01`)
-- [ ] **AC-09 (Responsive Layout)**: Screens render without `RenderFlex` overflow errors across small (320x568), standard (390x844), tall (412x915), and tablet viewports. (Traces: `NFR-001-03`, `EC-04`)
-- [ ] **AC-10 (Automated Test Verification)**:
+- [x] **AC-01 (Strict PortraitUp Lock)**: The app launches and stays locked strictly in `portraitUp` orientation when rotated on an Android device or emulator. (Traces: `REQ-001-01`, `EC-01`)
+- [x] **AC-02 (Native Visual Styling)**: The home screen displays warm wooden surfaces, metallic screw accents, and beveled buttons rendered strictly using native Flutter widgets and `CustomPainter` with zero external image assets. (Traces: `REQ-001-02`, `NFR-001-02`)
+- [x] **AC-03 (Play Button Navigation)**: Tapping the "Play" button navigates to the Gameplay Placeholder screen. (Traces: `REQ-001-03`, `REQ-001-04`)
+- [x] **AC-04 (Gameplay Placeholder & Back Navigation)**: The Gameplay Placeholder screen displays "Gameplay coming soon" and tapping its "Back" button (or Android system back) returns the user to the Home Screen. (Traces: `REQ-001-04`, `EC-05`)
+- [x] **AC-05 (Sound Preference Persistence Across Restarts)**: Changing the sound toggle setting in the settings dialog persists the choice locally; restarting the app preserves and loads the updated preference. (Traces: `REQ-001-05`, `REQ-001-06`, `EC-02`)
+- [x] **AC-06 (Settings Dialog & Toggle UI)**: Tapping the Settings button opens a modal dialog styled with the wooden/metallic theme, displaying a functioning Sound Toggle, version text, and a working dismiss/close button. (Traces: `REQ-001-05`)
+- [x] **AC-07 (Level Select Placeholder)**: Tapping "Levels" displays an informative placeholder dialog that dismisses cleanly without errors. (Traces: `REQ-001-07`)
+- [x] **AC-08 (Smooth Performance)**: The home screen, modal dialog, and placeholder screen transitions render smoothly without noticeable jank on baseline Android devices. (Traces: `NFR-001-01`)
+- [x] **AC-09 (Responsive Layout)**: Screens render without `RenderFlex` overflow errors across small (320x568), standard (390x844), tall (412x915), and tablet viewports. (Traces: `NFR-001-03`, `EC-04`)
+- [x] **AC-10 (Automated Test Verification)**:
   - Unit tests verify pure Dart business logic (sound settings controller, persistence repository, fallback handling).
   - Widget tests verify Home screen rendering, Play button navigation, Gameplay Placeholder screen display, Back button navigation, and Settings dialog sound toggle interaction. (Traces: `NFR-001-04`)
 
