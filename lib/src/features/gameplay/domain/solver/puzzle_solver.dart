@@ -128,3 +128,4 @@ abstract final class PuzzleSolver {
     );
   }
 }
+
