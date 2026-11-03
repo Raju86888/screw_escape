@@ -58,7 +58,7 @@
 
 ## Phase 3: Design System & Reusable Components (Native Painting Only)
 
-- [ ] **TASK-001-06**: Implement Theme Tokens (`AppColors`, `AppTextStyles`, `AppSpacing`)
+- [x] **TASK-001-06**: Implement Theme Tokens (`AppColors`, `AppTextStyles`, `AppSpacing`)
   - **Traces**: `REQ-001-02`, `NFR-001-02`, `AC-02`
   - **Details**:
     - Create `lib/src/core/theme/app_colors.dart` (wood tones, metallic brass/silver, emerald green CTA tokens).
@@ -66,19 +66,19 @@
     - Create `lib/src/core/theme/app_spacing.dart` (`xs: 4`, `sm: 8`, `md: 16`, `lg: 24`, `xl: 32`).
   - **Verification**: Write `test/widget/theme_tokens_test.dart` verifying all color definitions, font styles, and spacing metrics.
 
-- [ ] **TASK-001-07**: Implement `ScrewAccent` metallic screw-head widget using `CustomPainter`
+- [x] **TASK-001-07**: Implement `ScrewAccent` metallic screw-head widget using `CustomPainter`
   - **Traces**: `REQ-001-02`, `REQ-001-08`, `NFR-001-02`, `AC-02`
   - **Details**:
     - Create `lib/src/core/widgets/screw_accent.dart` with a `CustomPainter` rendering radial gradient metallic screw head, outer drop shadow, bevel ring, and inner slotted/Phillips groove. Zero external images.
   - **Verification**: Write `test/widget/screw_accent_test.dart` verifying rendering at multiple sizes (e.g., 16dp, 24dp, 32dp).
 
-- [ ] **TASK-001-08**: Implement `WoodSurface` wood-grain background widget using `CustomPainter`
+- [x] **TASK-001-08**: Implement `WoodSurface` wood-grain background widget using `CustomPainter`
   - **Traces**: `REQ-001-02`, `REQ-001-08`, `NFR-001-02`, `AC-02`
   - **Details**:
     - Create `lib/src/core/widgets/wood_surface.dart` rendering horizontal plank dividers, vertical wood grain gradients, and vignette/shadow borders via native Flutter canvas painting.
   - **Verification**: Write `test/widget/wood_surface_test.dart` verifying widget layout and child container rendering.
 
-- [ ] **TASK-001-09**: Implement `MetallicButton` tactile widget
+- [x] **TASK-001-09**: Implement `MetallicButton` tactile widget
   - **Traces**: `REQ-001-02`, `REQ-001-08`, `NFR-001-05`, `AC-03`, `AC-06`
   - **Details**:
     - Create `lib/src/core/widgets/metallic_button.dart` supporting:
@@ -88,7 +88,7 @@
       - Disabled state handling.
   - **Verification**: Write `test/widget/metallic_button_test.dart` asserting tap callbacks, disabled state, and visual press states.
 
-- [ ] **TASK-001-10**: Implement `ResponsiveContainer` layout wrapper
+- [x] **TASK-001-10**: Implement `ResponsiveContainer` layout wrapper
   - **Traces**: `NFR-001-03`, `EC-04`, `AC-09`
   - **Details**:
     - Create `lib/src/core/widgets/responsive_container.dart` constraining max content width to 480dp on tablets/wide screens while wrapping children in `SafeArea`.
@@ -98,7 +98,7 @@
 
 ## Phase 4: Screens, Dialogs & Navigation
 
-- [ ] **TASK-001-11**: Implement `GameplayPlaceholderScreen` with Back navigation
+- [x] **TASK-001-11**: Implement `GameplayPlaceholderScreen` with Back navigation
   - **Traces**: `REQ-001-04`, `AC-04`, `EC-05`
   - **Details**:
     - Create `lib/src/features/gameplay_placeholder/presentation/gameplay_placeholder_screen.dart` displaying:
@@ -107,7 +107,7 @@
       - Back button (using `MetallicButton` or app bar) that executes `Navigator.of(context).pop()`.
   - **Verification**: Write `test/widget/gameplay_placeholder_screen_test.dart` asserting text presence and Back button callback.
 
-- [ ] **TASK-001-12**: Implement `SettingsDialog` and `SoundToggleRow`
+- [x] **TASK-001-12**: Implement `SettingsDialog` and `SoundToggleRow`
   - **Traces**: `REQ-001-05`, `REQ-001-06`, `AC-06`, Single Version Truth
   - **Details**:
     - Create `lib/src/features/settings/presentation/widgets/sound_toggle_row.dart` with a sound switch and loading guard (disabled if `!controller.isLoaded`).
@@ -117,13 +117,13 @@
       - Close button dismissing the modal.
   - **Verification**: Write `test/widget/settings_dialog_test.dart` verifying toggle updates `SettingsController`, version displays accurately, and Close dismisses the dialog.
 
-- [ ] **TASK-001-13**: Implement `LevelSelectDialog` placeholder modal
+- [x] **TASK-001-13**: Implement `LevelSelectDialog` placeholder modal
   - **Traces**: `REQ-001-07`, `AC-07`
   - **Details**:
     - Create `lib/src/features/home/presentation/widgets/level_select_dialog.dart` displaying level selection coming soon information and a Close button.
   - **Verification**: Write `test/widget/level_select_dialog_test.dart` verifying dialog display and dismissal.
 
-- [ ] **TASK-001-14**: Implement `HomeScreen` with resilient navigation debounce guard
+- [x] **TASK-001-14**: Implement `HomeScreen` with resilient navigation debounce guard
   - **Traces**: `REQ-001-03`, `REQ-001-04`, `EC-04`, `EC-05`, `AC-02`, `AC-03`, Single Version Truth
   - **Details**:
     - Create `lib/src/features/home/presentation/widgets/game_title.dart` with stylized embossed title and `ScrewAccent` details.
@@ -139,7 +139,7 @@
 
 ## Phase 5: App Integration & Bootstrap (Testable Dependency Injection)
 
-- [ ] **TASK-001-15**: Implement `ScrewEscapeApp` with dependency injection and update `lib/main.dart`
+- [x] **TASK-001-15**: Implement `ScrewEscapeApp` with dependency injection and update `lib/main.dart`
   - **Traces**: `REQ-001-01`, `REQ-001-06`, `AC-01`, `NFR-001-01`, `NFR-001-04`
   - **Details**:
     - Create `lib/src/app.dart` defining `ScrewEscapeApp` configured with theme and `HomeScreen`.
