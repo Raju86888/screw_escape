@@ -114,7 +114,7 @@
 
 ## Phase 3: Gameplay Controller & Animation Pipeline (Application Layer)
 
-- [ ] **TASK-002-08**: Implement `GameplayController` state management and strict input locking lifecycle
+- [x] **TASK-002-08**: Implement `GameplayController` state management and strict input locking lifecycle
   - **Dependencies**: `TASK-002-04`, `TASK-002-05`
   - **Traces**: `REQ-002-01`, `EC-002-01`, `NFR-002-01`, Plan §5.2
   - **TDD Steps**:
@@ -127,7 +127,7 @@
     2. **Green**: Implement `lib/src/features/gameplay/application/gameplay_controller.dart` as a `ChangeNotifier` with state and input locking.
     3. **Refactor & Verify**: Run `flutter test test/unit/gameplay/gameplay_controller_test.dart` and confirm 100% pass.
 
-- [ ] **TASK-002-09**: Implement sequential animation pipeline and settlement event orchestration
+- [x] **TASK-002-09**: Implement sequential animation pipeline and settlement event orchestration
   - **Dependencies**: `TASK-002-08`
   - **Traces**: `REQ-002-02`, `REQ-002-05`, `REQ-002-06`, `REQ-002-07`, `REQ-002-08`, `REQ-002-15`, `AC-002-02`, `AC-002-04`, `AC-002-05`, `AC-002-06`, `AC-002-07`, Plan §5.1, §5.2, §5.3
   - **TDD Steps**:
@@ -140,7 +140,7 @@
     2. **Green**: Implement sequential async pipeline in `GameplayController`.
     3. **Refactor & Verify**: Run `flutter test test/unit/gameplay/gameplay_animation_pipeline_test.dart` and confirm 100% pass.
 
-- [ ] **TASK-002-10**: Implement Undo, Hint (with safe timer lifecycle), and Restart operations
+- [x] **TASK-002-10**: Implement Undo, Hint (with safe timer lifecycle), and Restart operations
   - **Dependencies**: `TASK-002-06`, `TASK-002-09`
   - **Traces**: `REQ-002-09`, `REQ-002-10`, `REQ-002-11`, `EC-002-03`, `EC-002-04`, `AC-002-08`, `AC-002-09`, `AC-002-10`, Plan §3.3, §6.5
   - **TDD Steps**:

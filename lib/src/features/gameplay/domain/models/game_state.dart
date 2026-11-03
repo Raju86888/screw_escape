@@ -93,11 +93,19 @@ class GameState {
       board.status = BoardStatus.falling;
     }
 
+    final clearedScrewIds = boardDropped
+        ? screws.values
+            .where((s) => s.boardId == board.id && s.isInTray)
+            .map((s) => s.id)
+            .toList()
+        : const <String>[];
+
     return MoveResult(
       screwId: screwId,
       traySlot: targetSlot,
       boardDropped: boardDropped,
       droppedBoardId: boardDropped ? board.id : null,
+      clearedScrewIds: clearedScrewIds,
     );
   }
 
