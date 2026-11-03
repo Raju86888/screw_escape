@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:screw_escape/src/app.dart';
+import 'package:screw_escape/src/features/settings/data/shared_preferences_repository.dart';
+import 'package:screw_escape/src/features/settings/domain/settings_controller.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -10,5 +12,12 @@ Future<void> main() async {
     DeviceOrientation.portraitUp,
   ]);
 
-  runApp(const ScrewEscapeApp());
+  // Instantiate production repository and controller
+  final repository = SharedPreferencesRepository();
+  final settingsController = SettingsController(repository);
+
+  // Kick off asynchronous settings load safely
+  settingsController.loadSettings();
+
+  runApp(ScrewEscapeApp(settingsController: settingsController));
 }
