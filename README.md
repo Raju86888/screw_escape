@@ -30,6 +30,15 @@ For details, read the [Engineering Constitution](.specify/memory/constitution.md
 3. **Task Breakdown (`specs/NNN-<feature>/tasks.md`)**: Define granular, test-backed steps.
 4. **Implementation**: Execute tasks sequentially, following TDD for domain logic.
 
+### Branching & PR Strategy
+
+All work must follow standard branch naming prefixes and raise a Pull Request targeting `main`:
+* `feat/<feature-name>`: For new features and puzzle mechanics.
+* `fix/<bug-name>`: For bug fixes and error resolutions.
+* `chore/<task-name>`: For tooling, templates, dependencies, and configuration.
+
+Every branch merges into `main` only via an approved Pull Request.
+
 See [specs/README.md](specs/README.md) and [specs/templates/](specs/templates/) to begin a new feature.
 
 ---

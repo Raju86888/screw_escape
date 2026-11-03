@@ -28,19 +28,26 @@ This constitution establishes the non-negotiable engineering principles and oper
 * Each commit or pull request must represent a single logical increment that keeps the build green and tests passing.
 * Avoid massive batch updates or simultaneous refactors across multiple subsystems.
 
-### 5. Minimal Dependencies
+### 5. Branching & PR Strategy
+* Strictly adhere to standardized branch prefixes:
+  * `feat/<feature-name>` for new features and gameplay capabilities.
+  * `fix/<bug-name>` for bug fixes and defect remediation.
+  * `chore/<task-name>` for setup, tooling, documentation, and maintenance.
+* Every branch must open a Pull Request (PR) targeting `main` and be merged into `main` upon approval and green checks. No direct pushes to `main`.
+
+### 6. Minimal Dependencies
 * Favor standard Dart and Flutter SDK capabilities before adding external packages.
 * Any new dependency must be vetted for footprint, maintenance activity, Android performance impact, and license compatibility.
 * Zero third-party dependencies are allowed without explicit evaluation recorded in `plan.md`.
 
-### 6. Clean Flutter Architecture
+### 7. Clean Flutter Architecture
 * Strict separation of concerns:
   * **Domain Layer (Pure Dart)**: Puzzle algorithms, board models, move rules, score calculation. Zero Flutter/UI imports. Fully testable in headless Dart.
   * **Application / State Layer**: State management (e.g., ValueNotifiers, ChangeNotifier, BLoC/Cubit), coordinating player inputs with domain mechanics.
   * **Presentation Layer (Flutter Widgets)**: Canvas painting, animations, haptic triggers, sound cues, touch interaction widgets. Purely reactive, containing no business logic.
   * **Data / Infrastructure Layer**: Local storage (preferences, save states, level unlocks) abstracted behind interfaces.
 
-### 7. Explicit Approval Before Implementation
+### 8. Explicit Approval Before Implementation
 * The development lifecycle follows distinct gated phases:
   1. **Specification** (`spec.md`) -> Review -> Approval
   2. **Technical Plan** (`plan.md`) -> Review -> Approval
