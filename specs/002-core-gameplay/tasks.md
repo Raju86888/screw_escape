@@ -12,7 +12,7 @@
 
 ## Phase 1: Domain Entities & Game State Logic (Pure Dart TDD)
 
-- [ ] **TASK-002-01**: Implement controlled mutable domain models (`BoardStatus`, `GameStatus`, `ScrewState`, `WoodenBoardState`) with deep-copy isolation
+- [x] **TASK-002-01**: Implement controlled mutable domain models (`BoardStatus`, `GameStatus`, `ScrewState`, `WoodenBoardState`) with deep-copy isolation
   - **Dependencies**: None
   - **Traces**: `REQ-002-01`, `REQ-002-03`, `AC-002-01`, `AC-002-03`, `NFR-002-02`, Plan §3.1
   - **TDD Steps**:
@@ -25,7 +25,7 @@
        - Zero Flutter UI imports (pure headless Dart).
     3. **Refactor & Verify**: Run `flutter test test/unit/gameplay/domain_models_test.dart` and confirm 100% pass.
 
-- [ ] **TASK-002-02**: Implement `GameStateSnapshot` and `MoveResult` models
+- [x] **TASK-002-02**: Implement `GameStateSnapshot` and `MoveResult` models
   - **Dependencies**: `TASK-002-01`
   - **Traces**: `REQ-002-09`, `AC-002-08`, `NFR-002-02`, Plan §3.1
   - **TDD Steps**:
@@ -35,7 +35,7 @@
        - `lib/src/features/gameplay/domain/models/move_result.dart`
     3. **Refactor & Verify**: Run `flutter test test/unit/gameplay/game_state_snapshot_test.dart` and confirm 100% pass.
 
-- [ ] **TASK-002-03**: Implement dynamic pure geometric screw accessibility in `GameState`
+- [x] **TASK-002-03**: Implement dynamic pure geometric screw accessibility in `GameState`
   - **Dependencies**: `TASK-002-01`
   - **Traces**: `REQ-002-01`, `EC-002-05`, `NFR-002-02`, Plan §3.2
   - **TDD Steps**:
@@ -49,7 +49,7 @@
     2. **Green**: Implement `GameState.isScrewAccessible(String screwId)` in `lib/src/features/gameplay/domain/models/game_state.dart`. Zero mutable or cached boolean accessibility flags.
     3. **Refactor & Verify**: Run `flutter test test/unit/gameplay/game_state_accessibility_test.dart` and confirm 100% pass.
 
-- [ ] **TASK-002-04**: Implement authoritative state transitions with terminal-state precedence (`applyMove`, `finalizeBoardClear`, `evaluateLoseCondition`, `undo`, `clone`)
+- [x] **TASK-002-04**: Implement authoritative state transitions with terminal-state precedence (`applyMove`, `finalizeBoardClear`, `evaluateLoseCondition`, `undo`, `clone`)
   - **Dependencies**: `TASK-002-02`, `TASK-002-03`
   - **Traces**: `REQ-002-01`, `REQ-002-02`, `REQ-002-04`, `REQ-002-05`, `REQ-002-06`, `REQ-002-07`, `REQ-002-08`, `REQ-002-09`, `EC-002-02`, `EC-002-04`, `AC-002-02`, `AC-002-04`, `AC-002-05`, `AC-002-06`, `AC-002-07`, `AC-002-08`, Plan §3.3
   - **TDD Steps**:
