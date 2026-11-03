@@ -69,7 +69,7 @@
 
 ## Phase 2: Declarative Level 1 & BFS Solver
 
-- [ ] **TASK-002-05** [P]: Implement declarative Level 1 layout data
+- [x] **TASK-002-05** [P]: Implement declarative Level 1 layout data
   - **Dependencies**: `TASK-002-01`, `TASK-002-04`
   - **Traces**: `REQ-002-12`, `AC-002-01`, Plan §7
   - **TDD Steps**:
@@ -84,7 +84,7 @@
     2. **Green**: Implement `lib/src/features/gameplay/domain/levels/level_1_data.dart` defining factory method `Level1Data.create()`.
     3. **Refactor & Verify**: Run `flutter test test/unit/gameplay/level_1_data_test.dart` and confirm 100% pass.
 
-- [ ] **TASK-002-06** [P]: Implement canonical BFS state key and `PuzzleSolver`
+- [x] **TASK-002-06** [P]: Implement canonical BFS state key and `PuzzleSolver`
   - **Dependencies**: `TASK-002-04`
   - **Traces**: `REQ-002-10`, `REQ-002-13`, `NFR-002-02`, Plan §3.4, §4.1
   - **TDD Steps**:
@@ -96,7 +96,7 @@
     2. **Green**: Implement `lib/src/features/gameplay/domain/solver/puzzle_solver.dart` with `canonicalStateKey`, `SolverResult`, and pure Dart BFS `PuzzleSolver.solve(GameState initial)` using authoritative domain transitions.
     3. **Refactor & Verify**: Run `flutter test test/unit/gameplay/puzzle_solver_test.dart` and confirm 100% pass.
 
-- [ ] **TASK-002-07**: Implement Level 1 solvability verification and performance benchmark telemetry test
+- [x] **TASK-002-07**: Implement Level 1 solvability verification and performance benchmark telemetry test
   - **Dependencies**: `TASK-002-05`, `TASK-002-06`
   - **Traces**: `REQ-002-13`, `AC-002-11`, Plan §4.2, §7
   - **TDD Steps**:

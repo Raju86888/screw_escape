@@ -23,3 +23,4 @@ class MoveResult {
     this.clearedScrewIds = const [],
   });
 }
+

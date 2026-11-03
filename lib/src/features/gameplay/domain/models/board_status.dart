@@ -9,3 +9,4 @@ enum BoardStatus {
   /// The board has completed its fall animation and is cleared from the canvas.
   cleared,
 }
+

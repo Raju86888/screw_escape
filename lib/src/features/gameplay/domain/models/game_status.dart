@@ -9,3 +9,4 @@ enum GameStatus {
   /// All holding tray slots are full and no board can drop (Deadlock).
   lost,
 }
+
