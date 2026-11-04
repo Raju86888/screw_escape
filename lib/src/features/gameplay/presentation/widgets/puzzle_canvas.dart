@@ -188,3 +188,4 @@ class PuzzleCanvas extends StatelessWidget {
     }
   }
 }
+

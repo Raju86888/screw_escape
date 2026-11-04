@@ -96,3 +96,4 @@ class _HintHighlightWidgetState extends State<HintHighlightWidget>
     );
   }
 }
+
