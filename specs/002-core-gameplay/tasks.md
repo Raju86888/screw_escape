@@ -157,7 +157,7 @@
 
 ## Phase 4: Presentation Components (Flutter Widgets & CustomPainters)
 
-- [ ] **TASK-002-11** [P]: Implement `HoldingTrayWidget` with recessed metallic sockets
+- [x] **TASK-002-11** [P]: Implement `HoldingTrayWidget` with recessed metallic sockets
   - **Dependencies**: `TASK-002-01`
   - **Traces**: `REQ-002-04`, `REQ-002-06`, `REQ-002-14`, `AC-002-02`, `AC-002-05`, Plan §6.4
   - **TDD Steps**:
@@ -170,7 +170,7 @@
     2. **Green**: Implement `lib/src/features/gameplay/presentation/widgets/holding_tray_widget.dart` using native Flutter containers, gradients, and `ScrewAccent`.
     3. **Refactor & Verify**: Run `flutter test test/widget/gameplay/holding_tray_widget_test.dart` and confirm 100% pass.
 
-- [ ] **TASK-002-12** [P]: Implement `WoodenBoardWidget` with gravity drop and tilt animation
+- [x] **TASK-002-12** [P]: Implement `WoodenBoardWidget` with gravity drop and tilt animation
   - **Dependencies**: `TASK-002-01`
   - **Traces**: `REQ-002-05`, `REQ-002-14`, `REQ-002-15`, `AC-002-04`, Plan §6.2
   - **TDD Steps**:
@@ -182,13 +182,13 @@
     2. **Green**: Implement `lib/src/features/gameplay/presentation/widgets/wooden_board_widget.dart`.
     3. **Refactor & Verify**: Run `flutter test test/widget/gameplay/wooden_board_widget_test.dart` and confirm 100% pass.
 
-- [ ] **TASK-002-13** [P]: Implement `InteractiveScrewWidget` with touch target and travel animation
+- [x] **TASK-002-13** [P]: Implement `InteractiveScrewWidget` with touch target and travel animation
   - **Dependencies**: `TASK-002-01`
   - **Traces**: `REQ-002-02`, `REQ-002-14`, `REQ-002-15`, `AC-002-02`, Plan §6.3
   - **TDD Steps**:
     1. **Red**: Create `test/widget/gameplay/interactive_screw_widget_test.dart` asserting:
        - Renders brass head via `ScrewAccent`.
-       - Minimum touch target size is $48 \times 48\,\text{dp}$ ($R = 24\,\text{dp}$).
+       - Minimum touch target size is $48 \times 48\,\text{dp}$ ($R = 24\,\text{dp}`).
        - Tapping triggers `onTap` callback with screw ID.
        - Movement animation translates screw towards target offset over $250\,\text{ms}$ with `Curves.easeInOutCubic`.
        - Tapping while disabled triggers no callback.
@@ -196,7 +196,7 @@
     2. **Green**: Implement `lib/src/features/gameplay/presentation/widgets/interactive_screw_widget.dart`.
     3. **Refactor & Verify**: Run `flutter test test/widget/gameplay/interactive_screw_widget_test.dart` and confirm 100% pass.
 
-- [ ] **TASK-002-14** [P]: Implement `HintHighlightWidget` with pulsating golden halo
+- [x] **TASK-002-14** [P]: Implement `HintHighlightWidget` with pulsating golden halo
   - **Dependencies**: None
   - **Traces**: `REQ-002-10`, `REQ-002-14`, `AC-002-09`, Plan §6.5
   - **TDD Steps**:
@@ -208,7 +208,7 @@
     2. **Green**: Implement `lib/src/features/gameplay/presentation/widgets/hint_highlight_widget.dart`.
     3. **Refactor & Verify**: Run `flutter test test/widget/gameplay/hint_highlight_widget_test.dart` and confirm 100% pass.
 
-- [ ] **TASK-002-15**: Implement responsive `PuzzleCanvas` with inverse touch coordinate mapping
+- [x] **TASK-002-15**: Implement responsive `PuzzleCanvas` with inverse touch coordinate mapping
   - **Dependencies**: `TASK-002-04`, `TASK-002-11`, `TASK-002-12`, `TASK-002-13`, `TASK-002-14`
   - **Traces**: `REQ-002-01`, `REQ-002-14`, `NFR-002-04`, `AC-002-01`, `AC-002-02`, Plan §6.1
   - **TDD Steps**:
