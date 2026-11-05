@@ -45,12 +45,17 @@ class GameHud extends StatelessWidget {
           ),
 
           // 2. Level Header Title
-          Text(
-            levelTitle,
-            style: AppTextStyles.heading.copyWith(
-              color: AppColors.textGold,
-              letterSpacing: 1.5,
-              fontWeight: FontWeight.w900,
+          Flexible(
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                levelTitle,
+                style: AppTextStyles.heading.copyWith(
+                  color: AppColors.textGold,
+                  letterSpacing: 1.5,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
             ),
           ),
 
@@ -76,53 +81,56 @@ class GameHud extends StatelessWidget {
   }) {
     return Opacity(
       opacity: isEnabled ? 1.0 : 0.5,
-      child: Semantics(
-        button: true,
-        enabled: isEnabled,
-        label: tooltip,
-        child: Material(
-          color: Colors.transparent,
-          child: InkWell(
-            key: key,
-            onTap: isEnabled ? onPressed : null,
-            borderRadius: BorderRadius.circular(12),
-            child: Container(
-              width: 44,
-              height: 44,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(12),
-                border: Border.all(
-                  color: isEnabled ? AppColors.metalSilverLight : AppColors.woodMedium,
-                  width: 1.5,
-                ),
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: isEnabled
+      child: Tooltip(
+        message: tooltip,
+        child: Semantics(
+          button: true,
+          enabled: isEnabled,
+          label: tooltip,
+          child: Material(
+            color: Colors.transparent,
+            child: InkWell(
+              key: key,
+              onTap: isEnabled ? onPressed : null,
+              borderRadius: BorderRadius.circular(12),
+              child: Container(
+                width: 48,
+                height: 48,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(
+                    color: isEnabled ? AppColors.metalSilverLight : AppColors.woodMedium,
+                    width: 1.5,
+                  ),
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: isEnabled
+                        ? const [
+                            AppColors.metalSilverLight,
+                            AppColors.metalSilver,
+                            AppColors.metalSilverDark,
+                          ]
+                        : const [
+                            Color(0xFF55433A),
+                            Color(0xFF3F3028),
+                          ],
+                  ),
+                  boxShadow: isEnabled
                       ? const [
-                          AppColors.metalSilverLight,
-                          AppColors.metalSilver,
-                          AppColors.metalSilverDark,
+                          BoxShadow(
+                            color: Color(0x66000000),
+                            blurRadius: 4,
+                            offset: Offset(0, 2),
+                          ),
                         ]
-                      : const [
-                          Color(0xFF55433A),
-                          Color(0xFF3F3028),
-                        ],
+                      : null,
                 ),
-                boxShadow: isEnabled
-                    ? const [
-                        BoxShadow(
-                          color: Color(0x66000000),
-                          blurRadius: 4,
-                          offset: Offset(0, 2),
-                        ),
-                      ]
-                    : null,
-              ),
-              child: Icon(
-                icon,
-                color: isEnabled ? AppColors.textDark : AppColors.textDisabled,
-                size: 20,
+                child: Icon(
+                  icon,
+                  color: isEnabled ? AppColors.textDark : AppColors.textDisabled,
+                  size: 20,
+                ),
               ),
             ),
           ),

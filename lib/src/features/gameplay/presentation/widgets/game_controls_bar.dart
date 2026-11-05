@@ -124,28 +124,34 @@ class GameControlsBar extends StatelessWidget {
                       ]
                     : null,
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    icon,
-                    color: isEnabled
-                        ? (isGold ? Colors.white : AppColors.textDark)
-                        : AppColors.textDisabled,
-                    size: 20,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: AppSpacing.xs),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        icon,
+                        color: isEnabled
+                            ? (isGold ? Colors.white : AppColors.textDark)
+                            : AppColors.textDisabled,
+                        size: 20,
+                      ),
+                      const SizedBox(width: AppSpacing.sm),
+                      Text(
+                        label,
+                        style: AppTextStyles.buttonLabel.copyWith(
+                          color: isEnabled
+                              ? (isGold ? Colors.white : AppColors.textDark)
+                              : AppColors.textDisabled,
+                          fontSize: 16,
+                          letterSpacing: 1.2,
+                        ),
+                      ),
+                    ],
                   ),
-                  const SizedBox(width: AppSpacing.sm),
-                  Text(
-                    label,
-                    style: AppTextStyles.buttonLabel.copyWith(
-                      color: isEnabled
-                          ? (isGold ? Colors.white : AppColors.textDark)
-                          : AppColors.textDisabled,
-                      fontSize: 16,
-                      letterSpacing: 1.2,
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           ),
@@ -154,3 +160,4 @@ class GameControlsBar extends StatelessWidget {
     );
   }
 }
+
