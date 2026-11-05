@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:screw_escape/src/core/config/app_config.dart';
+import 'package:screw_escape/src/features/gameplay/presentation/gameplay_screen.dart';
 import 'package:screw_escape/src/features/home/presentation/home_screen.dart';
 import 'package:screw_escape/src/features/settings/data/in_memory_preferences_repository.dart';
 import 'package:screw_escape/src/features/settings/domain/settings_controller.dart';
@@ -59,8 +60,7 @@ void main() {
       expect(find.text('Level selection coming soon!'), findsOneWidget);
     });
 
-    testWidgets('tapping Play navigates to GameplayPlaceholderScreen',
-        (tester) async {
+    testWidgets('tapping Play navigates to GameplayScreen', (tester) async {
       await tester.pumpWidget(
         MaterialApp(
           home: HomeScreen(settingsController: controller),
@@ -70,8 +70,7 @@ void main() {
       await tester.tap(find.text('PLAY'));
       await tester.pumpAndSettle();
 
-      expect(find.text('Gameplay coming soon'), findsOneWidget);
-      expect(find.text('BACK'), findsOneWidget);
+      expect(find.byType(GameplayScreen), findsOneWidget);
     });
   });
 }

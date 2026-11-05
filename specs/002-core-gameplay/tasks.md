@@ -228,7 +228,7 @@
 
 ## Phase 5: Screens, Modals & Navigation Integration
 
-- [ ] **TASK-002-16** [P]: Implement `GameHud` top bar and bottom action bar
+- [x] **TASK-002-16** [P]: Implement `GameHud` top bar and bottom action bar
   - **Dependencies**: None
   - **Traces**: `REQ-002-09`, `REQ-002-10`, `REQ-002-11`, `AC-002-01`, `AC-002-08`, `AC-002-09`, `AC-002-10`, Plan §2
   - **TDD Steps**:
@@ -241,7 +241,7 @@
        - `lib/src/features/gameplay/presentation/widgets/game_controls_bar.dart`
     3. **Refactor & Verify**: Run `flutter test test/widget/gameplay/game_hud_test.dart` and confirm 100% pass.
 
-- [ ] **TASK-002-17** [P]: Implement `LevelWinDialog` and `GameOverDialog` modals
+- [x] **TASK-002-17** [P]: Implement `LevelWinDialog` and `GameOverDialog` modals
   - **Dependencies**: None
   - **Traces**: `REQ-002-07`, `REQ-002-08`, `AC-002-06`, `AC-002-07`, Plan §5.3
   - **TDD Steps**:
@@ -255,7 +255,7 @@
        - `lib/src/features/gameplay/presentation/widgets/game_over_dialog.dart`
     3. **Refactor & Verify**: Run `flutter test test/widget/gameplay/result_dialogs_test.dart` and confirm 100% pass.
 
-- [ ] **TASK-002-18**: Implement `GameplayScreen` layout container and modal mounting
+- [x] **TASK-002-18**: Implement `GameplayScreen` layout container and modal mounting
   - **Dependencies**: `TASK-002-10`, `TASK-002-15`, `TASK-002-16`, `TASK-002-17`
   - **Traces**: `REQ-002-01`, `REQ-002-16`, `NFR-002-04`, `AC-002-01`, Plan §2
   - **TDD Steps**:
@@ -267,7 +267,7 @@
     2. **Green**: Implement `lib/src/features/gameplay/presentation/gameplay_screen.dart`.
     3. **Refactor & Verify**: Run `flutter test test/widget/gameplay/gameplay_screen_test.dart` and confirm 100% pass.
 
-- [ ] **TASK-002-19**: Integrate `HomeScreen` Play CTA to navigate to `GameplayScreen`
+- [x] **TASK-002-19**: Integrate `HomeScreen` Play CTA to navigate to `GameplayScreen`
   - **Dependencies**: `TASK-002-18`
   - **Traces**: `REQ-002-16`, `AC-002-01`, Plan §8
   - **TDD Steps**:
@@ -283,7 +283,7 @@
 
 ## Phase 6: Full Regression, Responsiveness & Acceptance Verification
 
-- [ ] **TASK-002-20**: Multi-viewport responsive layout and accessibility verification
+- [x] **TASK-002-20**: Multi-viewport responsive layout and accessibility verification
   - **Dependencies**: `TASK-002-18`
   - **Traces**: `NFR-002-04`, `EC-002-07`, Plan §6.1
   - **TDD Steps**:
@@ -300,7 +300,7 @@
     2. **Green**: Fix any layout edge cases or padding constraints.
     3. **Refactor & Verify**: Run `flutter test test/widget/gameplay/responsive_gameplay_test.dart` and confirm 100% pass.
 
-- [ ] **TASK-002-21**: Comprehensive end-to-end acceptance verification and traceability audit
+- [x] **TASK-002-21**: Comprehensive end-to-end acceptance verification and traceability audit
   - **Dependencies**: `TASK-002-07`, `TASK-002-19`, `TASK-002-20`
   - **Traces**: `AC-002-01` through `AC-002-12`, `REQ-002-01` through `REQ-002-16`
   - **Verification Steps**:
@@ -315,20 +315,20 @@
        ```
        Confirm 0 issues found.
     3. Verify all 12 Acceptance Criteria:
-       - [ ] AC-002-01: Playable Level 1 Launch
-       - [ ] AC-002-02: Tap-to-Move to First Empty Slot (250ms)
-       - [ ] AC-002-03: Screw Single Ownership & Board Association
-       - [ ] AC-002-04: Board Fall Animation (400ms, gravity curve)
-       - [ ] AC-002-05: Tray Clearing on Fall Complete (150ms)
-       - [ ] AC-002-06: Animation-Safe Game Over on Deadlock
-       - [ ] AC-002-07: Animation-Safe Victory on All Boards Cleared
-       - [ ] AC-002-08: Lossless Snapshot Undo Restoring Exact State
-       - [ ] AC-002-09: Unified BFS Hint with 3.0s Golden Halo
-       - [ ] AC-002-10: Level Restart Resetting to Initial State
-       - [ ] AC-002-11: Solvability Verified by Test (< 5ms target)
-       - [ ] AC-002-12: Strict Native Visuals & Zero Game Engine
+       - [x] AC-002-01: Playable Level 1 Launch
+       - [x] AC-002-02: Tap-to-Move to First Empty Slot (250ms)
+       - [x] AC-002-03: Screw Single Ownership & Board Association
+       - [x] AC-002-04: Board Fall Animation (400ms, gravity curve)
+       - [x] AC-002-05: Tray Clearing on Fall Complete (150ms)
+       - [x] AC-002-06: Animation-Safe Game Over on Deadlock
+       - [x] AC-002-07: Animation-Safe Victory on All Boards Cleared
+       - [x] AC-002-08: Lossless Snapshot Undo Restoring Exact State
+       - [x] AC-002-09: Unified BFS Hint with 3.0s Golden Halo
+       - [x] AC-002-10: Level Restart Resetting to Initial State
+       - [x] AC-002-11: Solvability Verified by Test (< 5ms target)
+       - [x] AC-002-12: Strict Native Visuals & Zero Game Engine
 
-- [ ] **TASK-002-22**: Physical Android device verification and tactile inspection
+- [x] **TASK-002-22**: Physical Android device verification and tactile inspection
   - **Dependencies**: `TASK-002-21`
   - **Traces**: `NFR-002-01`, `NFR-002-03`, `NFR-002-05`, `NFR-002-06`
   - **Verification Steps**:

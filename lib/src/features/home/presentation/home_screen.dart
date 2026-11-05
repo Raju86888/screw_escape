@@ -6,7 +6,7 @@ import 'package:screw_escape/src/core/theme/app_text_styles.dart';
 import 'package:screw_escape/src/core/widgets/metallic_button.dart';
 import 'package:screw_escape/src/core/widgets/responsive_container.dart';
 import 'package:screw_escape/src/core/widgets/wood_surface.dart';
-import 'package:screw_escape/src/features/gameplay_placeholder/presentation/gameplay_placeholder_screen.dart';
+import 'package:screw_escape/src/features/gameplay/presentation/gameplay_screen.dart';
 import 'package:screw_escape/src/features/home/presentation/widgets/game_title.dart';
 import 'package:screw_escape/src/features/home/presentation/widgets/level_select_dialog.dart';
 import 'package:screw_escape/src/features/settings/data/in_memory_preferences_repository.dart';
@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }
   }
 
-  /// Navigates to [GameplayPlaceholderScreen] with resilient try/finally debounce guard.
+  /// Navigates to [GameplayScreen] with resilient try/finally debounce guard.
   ///
   /// Guarantees against rapid double-tap route stacking (EC-05) and navigation lockouts.
   Future<void> _onPlayPressed() async {
@@ -55,7 +55,7 @@ class _HomeScreenState extends State<HomeScreen> {
     try {
       await Navigator.of(context).push(
         MaterialPageRoute<void>(
-          builder: (_) => const GameplayPlaceholderScreen(),
+          builder: (_) => const GameplayScreen(),
         ),
       );
     } finally {

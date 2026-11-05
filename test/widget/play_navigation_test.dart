@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:screw_escape/src/features/gameplay_placeholder/presentation/gameplay_placeholder_screen.dart';
+import 'package:screw_escape/src/features/gameplay/presentation/gameplay_screen.dart';
 import 'package:screw_escape/src/features/home/presentation/home_screen.dart';
 import 'package:screw_escape/src/features/home/presentation/widgets/level_select_dialog.dart';
 import 'package:screw_escape/src/features/settings/data/in_memory_preferences_repository.dart';
@@ -18,7 +18,7 @@ void main() {
     });
 
     testWidgets(
-        'rapid double-tap on PLAY only pushes a single GameplayPlaceholderScreen',
+        'rapid double-tap on PLAY only pushes a single GameplayScreen',
         (tester) async {
       await tester.pumpWidget(
         MaterialApp(
@@ -32,13 +32,13 @@ void main() {
       await tester.pumpAndSettle();
 
       // Exactly one gameplay screen exists
-      expect(find.byType(GameplayPlaceholderScreen), findsOneWidget);
+      expect(find.byType(GameplayScreen), findsOneWidget);
 
       // Tapping BACK once returns cleanly to HomeScreen
-      await tester.tap(find.text('BACK'));
+      await tester.tap(find.byKey(const ValueKey('game_hud_back_button')));
       await tester.pumpAndSettle();
 
-      expect(find.byType(GameplayPlaceholderScreen), findsNothing);
+      expect(find.byType(GameplayScreen), findsNothing);
       expect(find.byType(HomeScreen), findsOneWidget);
     });
 
@@ -54,24 +54,24 @@ void main() {
       // First navigation cycle
       await tester.tap(find.text('PLAY'));
       await tester.pumpAndSettle();
-      expect(find.byType(GameplayPlaceholderScreen), findsOneWidget);
+      expect(find.byType(GameplayScreen), findsOneWidget);
 
-      await tester.tap(find.text('BACK'));
+      await tester.tap(find.byKey(const ValueKey('game_hud_back_button')));
       await tester.pumpAndSettle();
-      expect(find.byType(GameplayPlaceholderScreen), findsNothing);
+      expect(find.byType(GameplayScreen), findsNothing);
 
       // Second navigation cycle (confirms debounce reset)
       await tester.tap(find.text('PLAY'));
       await tester.pumpAndSettle();
-      expect(find.byType(GameplayPlaceholderScreen), findsOneWidget);
+      expect(find.byType(GameplayScreen), findsOneWidget);
 
-      await tester.tap(find.text('BACK'));
+      await tester.tap(find.byKey(const ValueKey('game_hud_back_button')));
       await tester.pumpAndSettle();
-      expect(find.byType(GameplayPlaceholderScreen), findsNothing);
+      expect(find.byType(GameplayScreen), findsNothing);
     });
 
     testWidgets(
-        'Android system back gesture from GameplayPlaceholder pops cleanly to HomeScreen',
+        'Android system back gesture from GameplayScreen pops cleanly to HomeScreen',
         (tester) async {
       await tester.pumpWidget(
         MaterialApp(
@@ -81,20 +81,20 @@ void main() {
 
       await tester.tap(find.text('PLAY'));
       await tester.pumpAndSettle();
-      expect(find.byType(GameplayPlaceholderScreen), findsOneWidget);
+      expect(find.byType(GameplayScreen), findsOneWidget);
 
       // Trigger system back pop
       final NavigatorState navigator = tester.state(find.byType(Navigator));
       navigator.pop();
       await tester.pumpAndSettle();
 
-      expect(find.byType(GameplayPlaceholderScreen), findsNothing);
+      expect(find.byType(GameplayScreen), findsNothing);
       expect(find.byType(HomeScreen), findsOneWidget);
 
       // Confirm Play button still works after system back pop
       await tester.tap(find.text('PLAY'));
       await tester.pumpAndSettle();
-      expect(find.byType(GameplayPlaceholderScreen), findsOneWidget);
+      expect(find.byType(GameplayScreen), findsOneWidget);
     });
 
     testWidgets(
@@ -127,7 +127,7 @@ void main() {
       // Immediately navigate to Play
       await tester.tap(find.text('PLAY'));
       await tester.pumpAndSettle();
-      expect(find.byType(GameplayPlaceholderScreen), findsOneWidget);
+      expect(find.byType(GameplayScreen), findsOneWidget);
     });
   });
 }
